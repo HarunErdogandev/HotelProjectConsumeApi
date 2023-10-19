@@ -29,7 +29,7 @@ namespace HotelProject.WepApi.Controllers
             _testimonialService.TInsert(testimonial);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteTestimonial(int id)
         {
             var testimonial = _testimonialService.TGetById(id);
@@ -43,7 +43,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok();
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetTestimonial(int id)
         {
             var testimonial = _testimonialService.TGetById(id);

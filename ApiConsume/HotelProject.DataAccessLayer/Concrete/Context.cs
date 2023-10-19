@@ -17,7 +17,7 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer("server=DESKTOP-KGO885A;Initial Catalog=ApiDb;Integrated Security=True;TrustServerCertificate=True");
+                .UseSqlServer("server=.;Initial Catalog=ApiDb;Integrated Security=True;TrustServerCertificate=True");
                 
         }
 
