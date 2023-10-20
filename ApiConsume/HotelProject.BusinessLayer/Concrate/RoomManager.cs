@@ -17,27 +17,27 @@ namespace HotelProject.BusinessLayer.Concrate
         {
             _roomDal = roomDal;
         }
-        public void TDelete(TestiMonial entity)
+        public void TDelete(Room entity)
         {
             _roomDal.Delete(entity);
         }
 
-        public TestiMonial TGetById(int id)
+        public Room TGetById(int id)
         {
            return _roomDal.GetById(id);
         }
 
-        public List<TestiMonial> TGetList()
+        public List<Room> TGetList()
         {
             return _roomDal.GetList();
         }
 
-        public void TInsert(TestiMonial entity)
+        public void TInsert(Room entity)
         {
             _roomDal.Insert(entity);
         }
 
-        public void TUpdate(TestiMonial entity)
+        public void TUpdate(Room entity)
         {
            _roomDal.Update(entity);
         }

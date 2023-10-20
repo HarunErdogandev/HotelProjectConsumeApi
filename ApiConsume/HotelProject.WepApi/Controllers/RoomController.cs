@@ -24,7 +24,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok(values);
         }
         [HttpPost]
-        public IActionResult AddRoom(TestiMonial room)
+        public IActionResult AddRoom(Room room)
         {
             _roomService.TInsert(room);
             return Ok();
@@ -37,7 +37,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok();    
         }
         [HttpPut]
-        public IActionResult UpdateRoom(TestiMonial room)
+        public IActionResult UpdateRoom(Room room)
         {
             _roomService.TUpdate(room);
             return Ok();

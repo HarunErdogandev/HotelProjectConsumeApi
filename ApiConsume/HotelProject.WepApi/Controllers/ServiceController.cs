@@ -29,7 +29,7 @@ namespace HotelProject.WepApi.Controllers
             _serviceService.TInsert(service);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id)
         {
             var service = _serviceService.TGetById(id);
@@ -43,7 +43,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok();
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetService(int id)
         {
             var service = _serviceService.TGetById(id);
