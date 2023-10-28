@@ -26,7 +26,7 @@ namespace HotelProject.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 
-                var result=await _signInManager.PasswordSignInAsync(loginUserDto.Username,loginUserDto.Password,false,true);
+                var result= await _signInManager.PasswordSignInAsync(loginUserDto.Username,loginUserDto.Password,false,true);
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Staff");
