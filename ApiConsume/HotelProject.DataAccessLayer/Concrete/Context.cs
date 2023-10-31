@@ -28,6 +28,7 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<TestiMonial> TestiMonials { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
 
     }

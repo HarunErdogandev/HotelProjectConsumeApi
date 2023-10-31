@@ -4,6 +4,8 @@ using Hotel.ProjectDataAccessLayer.Concrete;
 using Hotel.ProjectDataAccessLayer.EntityFramework;
 using HotelProject.BusinessLayer.Abstract;
 using HotelProject.BusinessLayer.Concrate;
+using HotelProject.DataAccessLayer.Abstract;
+using HotelProject.DataAccessLayer.EntityFramework;
 
 namespace HotelProject.WepApi
 {
@@ -31,6 +33,9 @@ namespace HotelProject.WepApi
 
             builder.Services.AddScoped<IServiceDal, EfServiceDal>();
             builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+            builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+            builder.Services.AddScoped<IAboutService, AboutManager>();
 
             builder.Services.AddAutoMapper(typeof(Program));
 
