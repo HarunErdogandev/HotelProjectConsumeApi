@@ -25,7 +25,7 @@ namespace HotelProject.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                var retunr = "a";
                 var result= await _signInManager.PasswordSignInAsync(loginUserDto.Username,loginUserDto.Password,false,true);
                 if (result.Succeeded)
                 {
