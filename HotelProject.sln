@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProject.DtoLayer", "Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProject.WebUI", "Frontend\HotelProject.WebUI\HotelProject.WebUI.csproj", "{79A270B4-D0FB-4509-ABD0-6B10C47DDA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProject.DataAccessLayer", "ApiConsume\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj", "{E59B5803-C322-4691-93F3-A9C23C092685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelProject.DataAccessLayer", "ApiConsume\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj", "{E59B5803-C322-4691-93F3-A9C23C092685}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JwtProject", "JwtProject", "{4E62AF28-3308-4A37-84C8-9E5C89364038}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiJwt", "WebApiJwt\WebApiJwt.csproj", "{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deneme", "Deneme\Deneme.csproj", "{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +57,14 @@ Global
 		{E59B5803-C322-4691-93F3-A9C23C092685}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E59B5803-C322-4691-93F3-A9C23C092685}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E59B5803-C322-4691-93F3-A9C23C092685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +76,8 @@ Global
 		{A02D3352-4555-4F09-B501-9A5EDBBB6881} = {4FD2DCD5-F468-42A8-A1E5-9819F77EE08D}
 		{79A270B4-D0FB-4509-ABD0-6B10C47DDA73} = {CB34CDD9-885B-40FC-B78F-450DF1A9D1B8}
 		{E59B5803-C322-4691-93F3-A9C23C092685} = {4FD2DCD5-F468-42A8-A1E5-9819F77EE08D}
+		{36D53BE5-CBBC-4FD2-B987-B0F2C4EE1725} = {4E62AF28-3308-4A37-84C8-9E5C89364038}
+		{EA2F3EE5-7A20-41EC-8316-96A3AEA051D0} = {1816AF53-7D99-4FDE-9F02-38F7E1F6A926}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4363ED6-59F7-4F2D-9488-7CC8E0A4F349}
