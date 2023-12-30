@@ -43,7 +43,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok();
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
             var about = _aboutService.TGetById(id);
