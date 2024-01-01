@@ -8,7 +8,7 @@ namespace HotelProject.WebUI.Controllers
     public class AdminRoomController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private static string requestUri = "http://localhost:5279/api/Room";
+        private static string requestUri = "http://localhost:5279/api/Room/";
 
         public AdminRoomController(IHttpClientFactory httpClientFactory)
         {
@@ -38,11 +38,12 @@ namespace HotelProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddRoom(CreateRoomDto createRoomDto)
         {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
             var client = _httpClientFactory.CreateClient();
+            createRoomDto.Wifi = "Var";
             var jsonData = JsonConvert.SerializeObject(createRoomDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync(requestUri, stringContent);
@@ -70,7 +71,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> UpdateRoom(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:5279/api/Room/{id}");
+            var responseMessage = await client.GetAsync($"{requestUri}{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -87,6 +88,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> UpdateRoom(UpdateRoomDto updateRoomDto)
         {
             var client = _httpClientFactory.CreateClient();
+            updateRoomDto.Wifi = "Var";
             var jsonData = JsonConvert.SerializeObject(updateRoomDto);
             StringContent stringContent = new(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync(requestUri, stringContent);

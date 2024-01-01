@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,9 +21,19 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         {
             optionsBuilder
                 .UseSqlServer("server=.;Initial Catalog=ApiDb;Integrated Security=True;TrustServerCertificate=True");
-                
+
+       
+
         }
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Room>()
+              .ToTable(tb => tb.HasTrigger("Room"));
+            modelBuilder.Entity<Staff>()
+              .ToTable(tb => tb.HasTrigger("Staff"));
+        }
+
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Service> Services { get; set; }
