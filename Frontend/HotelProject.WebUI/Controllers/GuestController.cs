@@ -9,7 +9,7 @@ namespace HotelProject.WebUI.Controllers
     public class GuestController : Controller
     {
         public IHttpClientFactory _httpClientFactory;
-        public static  string ApiUrl = $"{DefaultApi.GetApi}/Guest/";
+        public static  string ApiUrl = $"{DefaultApi.GetApi}Guest";
         public GuestController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
@@ -17,11 +17,11 @@ namespace HotelProject.WebUI.Controllers
         public async Task< IActionResult> Index()
         {
             var client=_httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"{DefaultApi.GetApi}/Guest");
+            var responseMessage = await client.GetAsync(ApiUrl);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<ResultGuestDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultGuestDto>>(jsonData);
                 return View(values);
             }
 
@@ -47,29 +47,31 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
-
+        
         public async Task<IActionResult> DeleteGuest(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"{ApiUrl}{id}");
+            var responseMessage = await client.DeleteAsync($"{ApiUrl}/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("index");
             }
             return View();
         }
+        [HttpGet]
         public async Task<IActionResult> UpdateGuest(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"{ApiUrl}{id}");
+            var responseMessage = await client.GetAsync($"{ApiUrl}/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData= await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<ResultGuestDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<UpdateGuestDto>(jsonData);
                 return View(values);
             }
             return View();
         }
+        [HttpPut]
         public async Task<IActionResult> UpdateGuest(UpdateGuestDto updateGuestDto)
         {
             var client = _httpClientFactory.CreateClient();

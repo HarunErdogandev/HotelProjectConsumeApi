@@ -8,7 +8,7 @@ namespace HotelProject.WebUI.Controllers
     public class AdminRoomController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private static string requestUri = "http://localhost:5279/api/Room/";
+        private static string requestUri = "http://localhost:5279/api/Room";
 
         public AdminRoomController(IHttpClientFactory httpClientFactory)
         {
@@ -55,7 +55,7 @@ namespace HotelProject.WebUI.Controllers
 
         }
 
-
+        
         public async Task<IActionResult> DeleteRoom(int id)
         {
             var client = _httpClientFactory.CreateClient();

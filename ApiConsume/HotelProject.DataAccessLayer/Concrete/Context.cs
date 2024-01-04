@@ -32,6 +32,8 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
               .ToTable(tb => tb.HasTrigger("Room"));
             modelBuilder.Entity<Staff>()
               .ToTable(tb => tb.HasTrigger("Staff"));
+            modelBuilder.Entity<Guest>()
+              .ToTable(tb => tb.HasTrigger("Guest"));
         }
 
 
