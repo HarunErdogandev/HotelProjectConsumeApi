@@ -10,12 +10,17 @@
     
     <label>İsim</label>
     <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
     <br />
     <label>Soyisim</label>
     <input type="text" asp-for="Surname" class="form-control" />
+    <span asp-validation-for="Surname" class="text-danger"></span>
+
     <br />
     <label>Şehir</label>
     <input type="text" asp-for="City" class="form-control" />
+    <span asp-validation-for="City" class="text-danger"></span>
+
     <br />
 
     <button class="btn btn-primary">Güncelle</button>
