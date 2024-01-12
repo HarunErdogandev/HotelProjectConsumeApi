@@ -16,8 +16,8 @@ namespace HotelProject.WepApi.Controllers
             _contactService = contactService;
         }
 
-        [HttpGet]
-        public IActionResult ContactList()
+        [HttpGet("InboxList")]
+        public IActionResult InboxContactList()
         {
             var values = _contactService.TGetList();
 
@@ -44,7 +44,7 @@ namespace HotelProject.WepApi.Controllers
             return Ok();
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetContact(int id)
         {
             var contact = _contactService.TGetById(id);
