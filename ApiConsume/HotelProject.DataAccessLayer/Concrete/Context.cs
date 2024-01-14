@@ -20,7 +20,7 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer("server=.;Initial Catalog=ApiDb;Integrated Security=True;TrustServerCertificate=True");
+                .UseSqlServer("Data Source=192.168.1.35;Initial Catalog=ApiDb;Persist Security Info=True;User ID=sa;Password=1234;Encrypt=True;Trust Server Certificate=True");
 
        
 

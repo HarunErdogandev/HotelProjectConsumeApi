@@ -90,5 +90,19 @@ namespace HotelProject.WebUI.Controllers
             return View();
             
         }
+        public async Task<IActionResult> MessageDetailsInbox(int id)
+        {
+
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5279/api/Contact/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<GetMessageSendInboxById>(jsonData);
+                return View(values);
+            }
+            return View();
+
+        }
     }
 }

@@ -1,7 +1,6 @@
-﻿@model GetMessageByIDDto
-
+﻿@model GetMessageSendInboxById
 @{
-    ViewData["Title"] = "MessageDetails";
+    ViewData["Title"] = "MessageDetailsInbox";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
@@ -21,13 +20,13 @@
 
         </div>
     </div>
-    
+
     <div class="read-content">
         <div class="media pt-5">
             <img class="mr-3 rounded-circle" src="~/adminweb/images/avatar/1.jpg">
             <div class="media-body">
-                <h5 class="m-b-3">@Model.ReceiverName </h5>
-                <p class="m-b-2">@Model.Date.ToString("dd-MMMM-yyyy")</p>
+                <h5 class="m-b-3">@Model.Name </h5>
+                <p class="m-b-2">@Model.Date.ToString("dd-MMM-yyyy")</p>
             </div>
 
         </div>
@@ -35,17 +34,15 @@
         <div class="media mb-4 mt-1">
             <div class="media-body">
                 <span class="float-right">@Model.Date.ToString("T")</span>
-                <h4 class="m-0 text-primary">@Model.Title</h4><small class="text-muted">Kime:@Model.ReceiverName</small>
+                <h4 class="m-0 text-primary">@Model.Subject</h4><small class="text-muted"><b>Mail</b>:@Model.Mail</small>
             </div>
         </div>
-        
+
         <p>
-            @Model.Content
+            @Model.Message
         </p>
         <hr>
-        <div class="form-group p-t-15">
-            <textarea class="w-100 p-20 l-border-1" name="" id="" cols="30" rows="5" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
-        </div>
+       
     </div>
 
 </div>

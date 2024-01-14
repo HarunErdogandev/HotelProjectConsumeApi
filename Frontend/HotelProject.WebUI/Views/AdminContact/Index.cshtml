@@ -30,7 +30,7 @@
                     @foreach (var message in Model)
                     {
                         <div class="message">
-                            <a href="email-read.html">
+                            <a href="/AdminContact/MessageDetailsInbox/@message.ContactID">
                                 <div class="col-mail col-mail-1">
                                     <div class="email-checkbox">
                                         <input type="checkbox" id="chk2">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="col-mail col-mail-2">
                                     <div class="subject">@message.Message</div>
-                                    <div class="date">11:49 am</div>
+                                    <div class="date">@message.Date.ToString("dd-MMM-yyyy")</div>
                                 </div>
                             </a>
                         </div>
