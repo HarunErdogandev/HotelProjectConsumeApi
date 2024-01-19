@@ -4,6 +4,8 @@ using Hotel.ProjectDataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Dtos.GuestDto;
 using HotelProject.WebUI.ValidationRules.GuestValidationRules;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 
 namespace HotelProject.WebUI
@@ -22,7 +24,19 @@ namespace HotelProject.WebUI
             builder.Services.AddHttpClient();
             builder.Services.AddTransient<IValidator<CreateGuestDto>, GuestCreateValidator>();
             builder.Services.AddTransient<IValidator<UpdateGuestDto>, UpdateGuestValidator>();
+            //builder.Services.AddMvc(config =>
+            //{
+            //    // Yetkilendirme politikasý oluþturuyoruz ,   kimlik doðrulamasý gerekir, inþa et
+            //    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+            //    config.Filters.Add(new AuthorizeFilter(policy));
 
+            //});
+            //builder.Services.ConfigureApplicationCookie(opt =>
+            //{
+            //    opt.Cookie.HttpOnly = true;
+            //    opt.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+            //    opt.LoginPath = "/Login/Index";
+            //});
 
 
             builder.Services.AddControllersWithViews().AddFluentValidation();
@@ -33,15 +47,17 @@ namespace HotelProject.WebUI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Default}/{action=Index}/{id?}");
 
             app.Run();
         }

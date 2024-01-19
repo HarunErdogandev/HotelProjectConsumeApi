@@ -16,6 +16,12 @@ namespace HotelProject.BusinessLayer.Concrate
         {
             _contactDal = contactDal;
         }
+
+        public int TGetContactCaunt()
+        {
+            return _contactDal.GetContactCaunt();
+        }
+
         public void TDelete(Contact entity)
         {
             _contactDal.Delete(entity);

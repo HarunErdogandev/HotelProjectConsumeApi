@@ -51,5 +51,11 @@ namespace HotelProject.WepApi.Controllers
 
             return Ok(contact);
         }
+        [HttpGet("GetContactCount")]
+        public IActionResult GetContactCount()
+        {
+            var count = _contactService.TGetContactCaunt();
+            return Ok(count);
+        }
     }
 }

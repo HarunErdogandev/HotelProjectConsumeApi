@@ -1,10 +1,12 @@
 ﻿    using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Dtos.LoginDto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
@@ -25,7 +27,7 @@ namespace HotelProject.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var retunr = "a";
+                
                 var result= await _signInManager.PasswordSignInAsync(loginUserDto.Username,loginUserDto.Password,false,true);
                 if (result.Succeeded)
                 {
