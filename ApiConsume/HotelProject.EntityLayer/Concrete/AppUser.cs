@@ -15,10 +15,11 @@ namespace HotelProject.EntityLayer.Concrete
 
         public string ImageUrl { get; set; }
 
-        public override string ToString()
-        {
-            return $"{Name} {Surname}"; 
-        }
+        public string? WorkDepartment { get; set; }
+        public int WorkLocationId { get; set; }
+
+        public WorkLocation? WorkLocation { get; set; }
+        
 
     }
 }

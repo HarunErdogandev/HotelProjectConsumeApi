@@ -1,5 +1,4 @@
-﻿using Hotel.ProjectDataAccessLayer.Abstract;
-using HotelProject.BusinessLayer.Abstract;
+﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
 using System;
@@ -10,34 +9,34 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrate
 {
-    public class AboutManager:IAboutService
+    public class WorkLocationManager : IWorkLocationService
     {
-        private readonly IAboutDal _workLocationDal;
-        public AboutManager(IAboutDal workLocationDal)
+         private readonly IWorkLocationDal _workLocationDal;
+        public WorkLocationManager(IWorkLocationDal workLocationDal)
         {
             _workLocationDal = workLocationDal;
         }
-        public void TDelete(About entity)
+        public void TDelete(WorkLocation entity)
         {
             _workLocationDal.Delete(entity);
         }
 
-        public About TGetById(int id)
+        public WorkLocation TGetById(int id)
         {
             return _workLocationDal.GetById(id);
         }
 
-        public List<About> TGetList()
+        public List<WorkLocation> TGetList()
         {
             return _workLocationDal.GetList();
         }
 
-        public void TInsert(About entity)
+        public void TInsert(WorkLocation entity)
         {
             _workLocationDal.Insert(entity);
         }
 
-        public void TUpdate(About entity)
+        public void TUpdate(WorkLocation entity)
         {
             _workLocationDal.Update(entity);
         }

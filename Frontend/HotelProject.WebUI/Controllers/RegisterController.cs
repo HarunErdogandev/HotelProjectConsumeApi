@@ -33,6 +33,7 @@ namespace HotelProject.WebUI.Controllers
                 Email=createNewUserDto.Name,
                 Surname=createNewUserDto.Surname,
                 UserName=createNewUserDto.Username,
+                WorkLocationId=1,
             };
             var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);
             if (result.Succeeded)

@@ -6,6 +6,7 @@ using HotelProject.BusinessLayer.Abstract;
 using HotelProject.BusinessLayer.Concrate;
 using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.DataAccessLayer.EntityFramework;
+using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.WepApi
 {
@@ -52,6 +53,12 @@ namespace HotelProject.WepApi
             builder.Services.AddScoped<IMessageCategoryDal, EfMessageCategoryDal>();
             builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
 
+            builder.Services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
+            builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
+
+            builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+            builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
             builder.Services.AddAutoMapper(typeof(Program));
 
             builder.Services.AddCors(opt =>
@@ -64,6 +71,13 @@ namespace HotelProject.WepApi
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+            
+            
+
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

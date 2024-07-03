@@ -21,7 +21,7 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         {
             //optionsBuilder
             //    .UseSqlServer("Data Source=192.168.1.35;Initial Catalog=ApiDb;Persist Security Info=True;User ID=sa;Password=1234;Encrypt=True;Trust Server Certificate=True");
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ApiDb;Integrated Security=True;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ApiDb; Integrated Security=True; TrustServerCertificate=True");
            
 
 
@@ -50,6 +50,7 @@ namespace Hotel.ProjectDataAccessLayer.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<SendMessage> SendMessages { get; set; }
         public DbSet<MessageCategory> MessageCategories { get; set; }
+        public DbSet<WorkLocation> WorkLocations { get; set; }
 
 
     }
