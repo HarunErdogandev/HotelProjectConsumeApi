@@ -20,6 +20,7 @@ namespace HotelProject.WepApi.Controllers
         public IActionResult RoomList()
         {
             var values = _roomService.TGetList();
+            var de = "a";
 
             return Ok(values);
         }
