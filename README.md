@@ -1,3 +1,26 @@
+This is a hotel reservation project where customers can get information about the hotel, review the rooms and make reservations. Also customers subscribe the newsletter and send message to the admin.
+Tools:
+- Asp.Net Core 8.0 Web Api
+- SQL Server
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+Packages:
+- EntityFramework.Core
+- Identity
+- AutoMapper
+- FluentValidation
+- Authentication.JwtBearer
+- NetCore.MailKit
+Patterns:
+- Repository Design Pattern
+- N Tier Architecture
+
+
+
+
+
 ![Ekran görüntüsü 2023-12-25 111733](https://github.com/HarunErdogandev/HotelProjectConsumeApi/assets/136026310/9dcbcda1-8b61-4c1c-8c15-6f6f91f4683b)
 ![Ekran görüntüsü 2023-12-25 111831](https://github.com/HarunErdogandev/HotelProjectConsumeApi/assets/136026310/ba8f993e-1798-4da4-8c6b-1391d840ec53)
 ![Ekran görüntüsü 2023-12-25 111904](https://github.com/HarunErdogandev/HotelProjectConsumeApi/assets/136026310/d94e401b-e538-4d95-85a5-19132a2004ba)
